@@ -21,7 +21,9 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 /**
+ * 悬浮窗view
  * @author shijiacheng
+ * @date 2018/3/25
  */
 
 public class FloatingView extends LinearLayout {
@@ -31,12 +33,14 @@ public class FloatingView extends LinearLayout {
     private ImageView ivClose;
 
     private WindowManager windowManager;
-
+    /**移动前view的坐标*/
+    private Point moveBefore;
+    /**移动后view的坐标*/
+    private Point moveAfter;
 
     public FloatingView(Context context) {
         super(context);
         this.context = context;
-
         windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         initView();
     }
@@ -73,21 +77,14 @@ public class FloatingView extends LinearLayout {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventReceive(ActivityChangeEvent event){
-
         String packageName = event.getPackageName();
         String className = event.getClassName();
 
-//        if (className.startsWith(packageName)){
-//            className = className.substring(packageName.length());
-//        }
-
         tvPackageName.setText(packageName);
         tvClassName.setText(className);
-
     }
 
-    private Point moveBefore;
-    private Point moveAfter;
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -105,11 +102,11 @@ public class FloatingView extends LinearLayout {
 
                 params.x += dx;
                 params.y += dy;
-
                 windowManager.updateViewLayout(this, params);
-
                 moveBefore = moveAfter;
+                break;
 
+            default:
                 break;
         }
 
