@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ActivityCatcher</string>
+    <string name="description">本应用可以通过检测栈顶的变化，来展示当前的栈顶Activity</string>
+</resources>
