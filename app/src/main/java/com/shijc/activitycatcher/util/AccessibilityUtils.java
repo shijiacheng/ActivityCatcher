@@ -7,17 +7,17 @@ import android.widget.Toast;
 
 /**
  * Accessibility工具类
+ *
  * @author shijiacheng
+ * @date 2018/3/25
  */
 
 public class AccessibilityUtils {
 
     public static boolean checkAccessibility(Context context) {
-        // 判断辅助功能是否开启
         if (!AccessibilityUtils.isAccessibilitySettingsOpen(context)) {
             // 引导至辅助功能设置页面
-            context.startActivity(
-                    new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
+            context.startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
                             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             );
             Toast.makeText(context, "请先开启 \"Activity Catcher\" 的辅助功能", Toast.LENGTH_LONG).show();
@@ -26,6 +26,10 @@ public class AccessibilityUtils {
         return true;
     }
 
+    /**
+     * 判断辅助功能是否开启
+     * @param context
+     */
     public static boolean isAccessibilitySettingsOpen(Context context) {
         int accessibilityEnabled = 0;
         try {
@@ -42,7 +46,6 @@ public class AccessibilityUtils {
                 return services.toLowerCase().contains(context.getPackageName().toLowerCase());
             }
         }
-
         return false;
     }
 }
