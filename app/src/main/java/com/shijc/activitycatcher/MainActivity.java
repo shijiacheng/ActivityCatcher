@@ -9,8 +9,15 @@ import android.widget.Button;
 
 import com.shijc.activitycatcher.util.AccessibilityUtils;
 
+/**
+ * 首页
+ *
+ * @author shijiacheng
+ * @date 2018/3/25
+ */
 public class MainActivity extends AppCompatActivity {
     private Activity context;
+    /**开启service按钮*/
     private Button btnOpen;
 
     @Override
@@ -23,13 +30,13 @@ public class MainActivity extends AppCompatActivity {
         btnOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //开启service
                 if (AccessibilityUtils.checkAccessibility(MainActivity.this)) {
                     Intent intent = new Intent(context, ActivityCatcherService.class);
                     intent.putExtra(ActivityCatcherService.COMMAND, ActivityCatcherService.COMMAND_OPEN);
                     startService(intent);
                     finish();
                 }
-
             }
         });
 
