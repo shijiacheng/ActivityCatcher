@@ -3,7 +3,9 @@ package com.shijc.activitycatcher;
 import android.app.Application;
 
 /**
- * Created by shijiacheng on 2018/3/24.
+ * Application
+ * @author shijiacheng
+ * @date 2018/3/25
  */
 
 public class AppContext extends Application {
