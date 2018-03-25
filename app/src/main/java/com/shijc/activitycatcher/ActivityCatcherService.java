@@ -10,8 +10,10 @@ import com.shijc.activitycatcher.widget.FloatWindowManager;
 import org.greenrobot.eventbus.EventBus;
 
 /**
- * @author shijiacheng
+ * 获取Activity栈顶的service
  *
+ * @author shijiacheng
+ * @date 2018/3/25
  */
 
 public class ActivityCatcherService extends AccessibilityService {
@@ -52,13 +54,10 @@ public class ActivityCatcherService extends AccessibilityService {
             String classNameChange = event.getClassName().toString();
             EventBus.getDefault().post(new ActivityChangeEvent(packageNameChange, classNameChange));
         }
-
     }
 
     @Override
-    public void onInterrupt() {
-
-    }
+    public void onInterrupt() {}
 
     @Override
     public void onDestroy() {
