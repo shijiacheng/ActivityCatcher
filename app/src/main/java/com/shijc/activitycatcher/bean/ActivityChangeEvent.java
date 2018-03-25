@@ -1,7 +1,10 @@
 package com.shijc.activitycatcher.bean;
 
 /**
- * Created by shijiacheng on 2018/3/25.
+ * Activity事件改变Model
+ *
+ * @author shijiacheng
+ * @date 2018/3/25
  */
 
 public class ActivityChangeEvent {
