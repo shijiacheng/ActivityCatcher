@@ -7,7 +7,10 @@ import android.view.View;
 import android.view.WindowManager;
 
 /**
- * Created by shijiacheng on 2018/3/25.
+ * 悬浮窗控制器
+ *
+ * @author shijiacheng
+ * @date 2018/3/25
  */
 
 public class FloatWindowManager {
@@ -37,18 +40,18 @@ public class FloatWindowManager {
         LAYOUT_PARAMS = params;
     }
 
-    public void addView(){
-        if (floatingView==null){
+    public void addView() {
+        if (floatingView == null) {
             floatingView = new FloatingView(context);
             floatingView.setLayoutParams(LAYOUT_PARAMS);
-            windowManager.addView(floatingView,LAYOUT_PARAMS);
+            windowManager.addView(floatingView, LAYOUT_PARAMS);
         }
     }
 
-    public void removeView(){
-        if (floatingView != null){
+    public void removeView() {
+        if (floatingView != null) {
             windowManager.removeView(floatingView);
-            floatingView =null;
+            floatingView = null;
         }
     }
 }
