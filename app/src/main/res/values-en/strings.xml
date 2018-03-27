@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ActivityCatcher</string>
+    <string name="start_catcher">Start Activity Catcher</string>
+    <string name="description">This application can display the current stack top Activity by detecting changes in the top of the stack.</string>
+</resources>
