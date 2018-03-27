@@ -1,7 +1,7 @@
 ## Activity Catcher
 
 
-README English 中文
+README [English](README-EN.md) 中文
 
 ### 项目介绍
 
@@ -18,12 +18,16 @@ Android 辅助功能(AccessibilityService) 为我们提供了一系列的事件�
 
 ### 效果图
 
+![效果图](images/renderings_cn.jpg)
+
 
 ### 使用方法
 
-1. 点击开启悬浮窗按钮。此时需要你开启辅助功能（无障碍功能）。
+1. 点击"开启ACTIVITY CATCHER"按钮。此时需要你开启辅助功能（无障碍功能）。
 2. 开启辅助功能后，返回app，点击开启悬浮窗按钮，即可使用。
 
+
+![使用方法图](images/usage.png)
 
 ### 源码
 
