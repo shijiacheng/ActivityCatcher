@@ -22,7 +22,7 @@ We can derive auxiliary function classes and then process different accessibilit
 
 ### Renderings
 
-![renderings](images/renderings_En.jpg)
+![renderings](images/renderings_en.jpg)
 
 
 ### Usage
